@@ -131,6 +131,9 @@
            //Clear the currently displayed gifs
            $("#gif-display-area").empty();
 
+           //Remove the See More Button
+           $("#see-more-button").empty();
+
            //Query the API for the desired term and display the first 10 gifs
            getGifs($(this).text());
 
