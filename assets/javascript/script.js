@@ -112,7 +112,7 @@
 
            //Only add the input if it is not blank
            if (userInput != "") {
-               buttonArray.push(userInput);
+               buttonArray.unshift(userInput);
            }
 
            //Generate the buttons
