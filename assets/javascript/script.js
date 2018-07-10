@@ -37,6 +37,14 @@
 
            console.log(imageArray);
 
+           //Create a div for the instructions
+           var instructions = $("<h2>");
+        //    title.addClass("figure-caption");
+           instructions.text("Click a gif to toggle animation on and off:");
+
+           //Append the figure to the page
+           $("#gif-display-area").append(instructions);
+
            //Display the first 10 gifs
            for (var i = 0; i < 10; i++) {
                displayGif(i);
