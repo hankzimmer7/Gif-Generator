@@ -1,5 +1,5 @@
    //------------Declare global variables-------------------------------
-   var buttonArray = ["winter", "dogs", "horses", "rain", "anime", "math", "beer", "atlanta", "okonomiyaki"];
+   var buttonArray = ["winter", "dogs", "cars", "horses", "rain", "anime", "math", "beer", "atlanta", "okonomiyaki","airplanes","bees","sunset","pizza","pokemon","kawaii","robots","parrots","tokyo",];
    var currentGifSearch;
    var imageArray = [];
 
@@ -12,11 +12,18 @@
        $("#gif-buttons").empty();
 
        //For each element in the array, display a button
-       buttonArray.forEach(element => {
+       buttonArray.forEach(function (element, index) {
            var newButton = $("<button>");
-           newButton.addClass("gif-button btn btn-light my-2 mx-1");
+           newButton.addClass("gif-button btn btn-light");
            newButton.text(element);
+           newButton.attr("id", "button-" + index);
+
            $("#gif-buttons").append(newButton);
+
+           //Give the current button a random color
+           var currentButton = $("#button-" + index);
+           var random_hue = 'rgb(' + (Math.floor(Math.random() * 200)) + ',' + (Math.floor(Math.random() * 200)) + ',' + (Math.floor(Math.random() * 200)) + ')';
+           currentButton.css("background-color", random_hue);
        });
    }
 
@@ -39,8 +46,8 @@
 
            //Create a div for the instructions
            var instructions = $("<h2>");
-        //    title.addClass("figure-caption");
-           instructions.text("Click a gif to toggle animation on and off:");
+           //    title.addClass("figure-caption");
+           instructions.text("Click a gif to toggle animation off and on:");
 
            //Append the figure to the page
            $("#gif-display-area").append(instructions);
@@ -71,12 +78,12 @@
 
        //Create an image tag
        var image = $("<img>");
-       image.attr("src", imageUrlStill);
+       image.attr("src", imageUrlAnimated);
        image.addClass("figure-img img-fluid rounded m-1");
        image.attr("alt", currentGifSearch + " gif");
        image.attr("url-animated", imageUrlAnimated);
        image.attr("url-still", imageUrlStill);
-       image.attr("animation-state", "still");
+       image.attr("animation-state", "animated");
 
        //Create a caption with the title and rating
        var title = $("<figcaption>");
