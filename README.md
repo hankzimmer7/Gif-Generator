@@ -1,6 +1,6 @@
 # Gif-Generator
 
-Deployed at https://hankzimmer7.github.io/Gif-Generator/
+Deployed at https://hankzimmer7.github.io/gif-generator/
 
 ## Description
 
